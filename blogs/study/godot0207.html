@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>创建敌人并随机移动 | 悯</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="光阴似箭">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.3d23d35a.css" as="style"><link rel="preload" href="/assets/js/app.507e6f2f.js" as="script"><link rel="preload" href="/assets/js/3.cb9785bd.js" as="script"><link rel="preload" href="/assets/js/1.1ebb03c9.js" as="script"><link rel="preload" href="/assets/js/80.cf281b83.js" as="script"><link rel="prefetch" href="/assets/js/10.4f7be702.js"><link rel="prefetch" href="/assets/js/11.abff5412.js"><link rel="prefetch" href="/assets/js/12.711fb361.js"><link rel="prefetch" href="/assets/js/13.2714e751.js"><link rel="prefetch" href="/assets/js/14.c213932a.js"><link rel="prefetch" href="/assets/js/15.4cb89caf.js"><link rel="prefetch" href="/assets/js/16.a4cec825.js"><link rel="prefetch" href="/assets/js/17.902693e0.js"><link rel="prefetch" href="/assets/js/18.92242060.js"><link rel="prefetch" href="/assets/js/19.04c6d9d9.js"><link rel="prefetch" href="/assets/js/20.26ea7d97.js"><link rel="prefetch" href="/assets/js/21.11f66486.js"><link rel="prefetch" href="/assets/js/22.9501f696.js"><link rel="prefetch" href="/assets/js/23.4c4cca68.js"><link rel="prefetch" href="/assets/js/24.8f88edd8.js"><link rel="prefetch" href="/assets/js/25.ad9ffd15.js"><link rel="prefetch" href="/assets/js/26.c3a319a2.js"><link rel="prefetch" href="/assets/js/27.8ce14406.js"><link rel="prefetch" href="/assets/js/28.793816ca.js"><link rel="prefetch" href="/assets/js/29.357d7371.js"><link rel="prefetch" href="/assets/js/30.4ad1fc0d.js"><link rel="prefetch" href="/assets/js/31.622f3320.js"><link rel="prefetch" href="/assets/js/32.84c2d8bc.js"><link rel="prefetch" href="/assets/js/33.de2f22d9.js"><link rel="prefetch" href="/assets/js/34.29feba14.js"><link rel="prefetch" href="/assets/js/35.a1610f41.js"><link rel="prefetch" href="/assets/js/36.4a7cd690.js"><link rel="prefetch" href="/assets/js/37.fd920f5f.js"><link rel="prefetch" href="/assets/js/38.0ed488bb.js"><link rel="prefetch" href="/assets/js/39.4e918bc4.js"><link rel="prefetch" href="/assets/js/4.743e678e.js"><link rel="prefetch" href="/assets/js/40.dbf0c1b7.js"><link rel="prefetch" href="/assets/js/41.a9bcb785.js"><link rel="prefetch" href="/assets/js/42.630c5e47.js"><link rel="prefetch" href="/assets/js/43.686d38c3.js"><link rel="prefetch" href="/assets/js/44.c5e962ca.js"><link rel="prefetch" href="/assets/js/45.4238cf9a.js"><link rel="prefetch" href="/assets/js/46.8451ff98.js"><link rel="prefetch" href="/assets/js/47.13237eea.js"><link rel="prefetch" href="/assets/js/48.6c3fc4ea.js"><link rel="prefetch" href="/assets/js/49.c61017db.js"><link rel="prefetch" href="/assets/js/5.74e9d219.js"><link rel="prefetch" href="/assets/js/50.439c98a8.js"><link rel="prefetch" href="/assets/js/51.e6ca73f6.js"><link rel="prefetch" href="/assets/js/52.8055e437.js"><link rel="prefetch" href="/assets/js/53.ec4c0045.js"><link rel="prefetch" href="/assets/js/54.a1ccd9ef.js"><link rel="prefetch" href="/assets/js/55.633a9284.js"><link rel="prefetch" href="/assets/js/56.867048fe.js"><link rel="prefetch" href="/assets/js/57.5d2bc597.js"><link rel="prefetch" href="/assets/js/58.3e7fb068.js"><link rel="prefetch" href="/assets/js/59.b2b55c94.js"><link rel="prefetch" href="/assets/js/6.de42a852.js"><link rel="prefetch" href="/assets/js/60.33a7aa79.js"><link rel="prefetch" href="/assets/js/61.e36c789c.js"><link rel="prefetch" href="/assets/js/62.38c5a4b4.js"><link rel="prefetch" href="/assets/js/63.4ddeaa08.js"><link rel="prefetch" href="/assets/js/64.c7d69c6e.js"><link rel="prefetch" href="/assets/js/65.d5136fab.js"><link rel="prefetch" href="/assets/js/66.c3c6056a.js"><link rel="prefetch" href="/assets/js/67.48b814e3.js"><link rel="prefetch" href="/assets/js/68.59490877.js"><link rel="prefetch" href="/assets/js/69.70d34588.js"><link rel="prefetch" href="/assets/js/7.90911966.js"><link rel="prefetch" href="/assets/js/70.4aa3ae6f.js"><link rel="prefetch" href="/assets/js/71.cbabd419.js"><link rel="prefetch" href="/assets/js/72.330f8bd7.js"><link rel="prefetch" href="/assets/js/73.3f236d87.js"><link rel="prefetch" href="/assets/js/74.cbda9934.js"><link rel="prefetch" href="/assets/js/75.a4f3e9fa.js"><link rel="prefetch" href="/assets/js/76.1aed09b3.js"><link rel="prefetch" href="/assets/js/77.b199e1ca.js"><link rel="prefetch" href="/assets/js/78.dff82480.js"><link rel="prefetch" href="/assets/js/79.718a3ee3.js"><link rel="prefetch" href="/assets/js/8.b13c72c8.js"><link rel="prefetch" href="/assets/js/81.6eba17ab.js"><link rel="prefetch" href="/assets/js/82.6f9e1c85.js"><link rel="prefetch" href="/assets/js/83.81d3502a.js"><link rel="prefetch" href="/assets/js/84.c50b58d0.js"><link rel="prefetch" href="/assets/js/85.62d64319.js"><link rel="prefetch" href="/assets/js/86.61b29019.js"><link rel="prefetch" href="/assets/js/87.0bb02c40.js"><link rel="prefetch" href="/assets/js/88.25e33cda.js"><link rel="prefetch" href="/assets/js/89.09434aa7.js"><link rel="prefetch" href="/assets/js/9.8dfe89c8.js"><link rel="prefetch" href="/assets/js/90.20e7660c.js"><link rel="prefetch" href="/assets/js/91.524d0881.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3d23d35a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>悯</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>悯</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2026
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/school.jpg" alt="悯" class="logo"> <span class="site-name">悯</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/ECMAScript/" class="nav-link"><i class="iconfont undefined"></i>
+  ECMAScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Markdwon/" class="nav-link"><i class="iconfont undefined"></i>
+  Markdwon
+</a></li><li class="dropdown-item"><!----> <a href="/categories/InformalEssay/" class="nav-link"><i class="iconfont undefined"></i>
+  InformalEssay
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node.js/" class="nav-link"><i class="iconfont undefined"></i>
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tomcat/" class="nav-link"><i class="iconfont undefined"></i>
+  Tomcat
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WeChat/" class="nav-link"><i class="iconfont undefined"></i>
+  WeChat
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Mybatis/" class="nav-link"><i class="iconfont undefined"></i>
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CollectionWebsite/" class="nav-link"><i class="iconfont undefined"></i>
+  CollectionWebsite
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C井/" class="nav-link"><i class="iconfont undefined"></i>
+  C井
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ECMAJavascript/" class="nav-link"><i class="iconfont undefined"></i>
+  ECMAJavascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="iconfont undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/UniAPP/" class="nav-link"><i class="iconfont undefined"></i>
+  UniAPP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MQ/" class="nav-link"><i class="iconfont undefined"></i>
+  MQ
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SQL/" class="nav-link"><i class="iconfont undefined"></i>
+  SQL
+</a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><i class="iconfont undefined"></i>
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="iconfont undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Sass/" class="nav-link"><i class="iconfont undefined"></i>
+  Sass
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AI/" class="nav-link"><i class="iconfont undefined"></i>
+  AI
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Android/" class="nav-link"><i class="iconfont undefined"></i>
+  Android
+</a></li><li class="dropdown-item"><!----> <a href="/categories/game/" class="nav-link"><i class="iconfont undefined"></i>
+  game
+</a></li><li class="dropdown-item"><!----> <a href="/categories/.NET/" class="nav-link"><i class="iconfont undefined"></i>
+  .NET
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  tool
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Markdown/" class="nav-link"><i class="iconfont undefined"></i>
+  Markdown
+</a></li><li class="dropdown-item"><!----> <a href="/categories/美术/" class="nav-link"><i class="iconfont undefined"></i>
+  美术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/游戏/" class="nav-link"><i class="iconfont undefined"></i>
+  游戏
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/article/" class="nav-link"><i class="iconfont undefined"></i>
+  文档
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/school.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    悯
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>74</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>40</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/ECMAScript/" class="nav-link"><i class="iconfont undefined"></i>
+  ECMAScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Markdwon/" class="nav-link"><i class="iconfont undefined"></i>
+  Markdwon
+</a></li><li class="dropdown-item"><!----> <a href="/categories/InformalEssay/" class="nav-link"><i class="iconfont undefined"></i>
+  InformalEssay
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node.js/" class="nav-link"><i class="iconfont undefined"></i>
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tomcat/" class="nav-link"><i class="iconfont undefined"></i>
+  Tomcat
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WeChat/" class="nav-link"><i class="iconfont undefined"></i>
+  WeChat
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Mybatis/" class="nav-link"><i class="iconfont undefined"></i>
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CollectionWebsite/" class="nav-link"><i class="iconfont undefined"></i>
+  CollectionWebsite
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C井/" class="nav-link"><i class="iconfont undefined"></i>
+  C井
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ECMAJavascript/" class="nav-link"><i class="iconfont undefined"></i>
+  ECMAJavascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML/" class="nav-link"><i class="iconfont undefined"></i>
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/categories/UniAPP/" class="nav-link"><i class="iconfont undefined"></i>
+  UniAPP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MQ/" class="nav-link"><i class="iconfont undefined"></i>
+  MQ
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SQL/" class="nav-link"><i class="iconfont undefined"></i>
+  SQL
+</a></li><li class="dropdown-item"><!----> <a href="/categories/VUE/" class="nav-link"><i class="iconfont undefined"></i>
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="iconfont undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Sass/" class="nav-link"><i class="iconfont undefined"></i>
+  Sass
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AI/" class="nav-link"><i class="iconfont undefined"></i>
+  AI
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Android/" class="nav-link"><i class="iconfont undefined"></i>
+  Android
+</a></li><li class="dropdown-item"><!----> <a href="/categories/game/" class="nav-link"><i class="iconfont undefined"></i>
+  game
+</a></li><li class="dropdown-item"><!----> <a href="/categories/.NET/" class="nav-link"><i class="iconfont undefined"></i>
+  .NET
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  tool
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Markdown/" class="nav-link"><i class="iconfont undefined"></i>
+  Markdown
+</a></li><li class="dropdown-item"><!----> <a href="/categories/美术/" class="nav-link"><i class="iconfont undefined"></i>
+  美术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/游戏/" class="nav-link"><i class="iconfont undefined"></i>
+  游戏
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/article/" class="nav-link"><i class="iconfont undefined"></i>
+  文档
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>创建敌人并随机移动</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>悯</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2026
+        </a></span></div></div> <div data-v-dad8a512><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1>创建敌人并随机移动</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>悯</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2026-02-07 20:55:00</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Godot</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><ol><li>思路:和敌人逻辑一样，唯一不同的是敌人是随机走动，不是控制的</li></ol> <ul><li>创建敌人场景、动画帧</li> <li>创建敌人敌人脚本</li> <li>创建状态机相关</li></ul> <ol start="2"><li>代码</li></ol> <ul><li>敌人脚本</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name Enemy extends CharacterBody2D
+<span class="token comment">## 方向变化信号</span>
+signal direction_changed<span class="token punctuation">(</span>new_direction<span class="token punctuation">:</span>Vector2<span class="token punctuation">)</span>
+<span class="token comment">## 敌人受到伤害信号</span>
+signal enemy_damaged<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">## 4个方向的常量,顺序分别是：右，下，左，上</span>
+const DIR_4<span class="token operator">=</span><span class="token punctuation">[</span>Vector2<span class="token punctuation">.</span>RIGHT<span class="token punctuation">,</span>Vector2<span class="token punctuation">.</span>DOWN<span class="token punctuation">,</span>Vector2<span class="token punctuation">.</span>LEFT<span class="token punctuation">,</span>Vector2<span class="token punctuation">.</span>UP<span class="token punctuation">]</span>
+<span class="token comment">## 敌人血量</span>
+<span class="token decorator annotation punctuation">@export</span> var hp<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">## 之前方向变量，默认向下,存放之前的方向向量坐标</span>
+var cardinal_direction <span class="token punctuation">:</span> Vector2 <span class="token operator">=</span> Vector2<span class="token punctuation">.</span>DOWN
+<span class="token comment">## 初始位置变量，默认（0，0）</span>
+var direction <span class="token punctuation">:</span> Vector2 <span class="token operator">=</span> Vector2<span class="token punctuation">.</span>ZERO
+<span class="token comment">## 玩家变量，还没用上</span>
+var player<span class="token punctuation">:</span>Player
+<span class="token comment">## 是否会受到伤害</span>
+var invulnerable<span class="token punctuation">:</span><span class="token builtin">bool</span><span class="token operator">=</span>false
+<span class="token comment">## 动画变量</span>
+<span class="token decorator annotation punctuation">@onready</span> var animation_player<span class="token punctuation">:</span> AnimationPlayer <span class="token operator">=</span> $AnimationPlayer
+<span class="token comment">## 精灵变量</span>
+<span class="token decorator annotation punctuation">@onready</span> var sprite<span class="token punctuation">:</span> Sprite2D <span class="token operator">=</span> $Sprite2D
+<span class="token comment">## 状态管理器变量-只读</span>
+<span class="token decorator annotation punctuation">@onready</span> var state_machine<span class="token punctuation">:</span>EnemeyStateMachine<span class="token operator">=</span>$EnemyStateManchine
+
+<span class="token comment"># Called when the node enters the scene tree for the first time.</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token comment">## 状态管理器初始化加载方法调用</span>
+	state_machine<span class="token punctuation">.</span>initialize<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+	player<span class="token operator">=</span>PlayerManager<span class="token punctuation">.</span>player
+	
+	<span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+
+<span class="token comment"># Called every frame. 'delta' is the elapsed time since the previous frame.</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+func _physics_process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	move_and_slide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 设置方向方法，返回bool类型</span>
+func set_direction<span class="token punctuation">(</span>_new_direction<span class="token punctuation">:</span>Vector2<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+	direction<span class="token operator">=</span>_new_direction
+	<span class="token comment">## 判断获取了最新初始位置的局部变量是否有变化，没有返回false</span>
+	<span class="token keyword">if</span> direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>ZERO<span class="token punctuation">:</span>
+		<span class="token keyword">return</span> false
+	<span class="token comment">## 获取方向id索引，解决动画人物太空步问题</span>
+	var direction_id<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">round</span><span class="token punctuation">(</span>
+		<span class="token punctuation">(</span>direction<span class="token operator">+</span>cardinal_direction<span class="token operator">*</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>angle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token operator">/</span>TAU<span class="token operator">*</span>DIR_4<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token comment">## 根据方向id索引获取新方向Vector2属性</span>
+	var new_direction<span class="token operator">=</span>DIR_4<span class="token punctuation">[</span>direction_id<span class="token punctuation">]</span>
+	
+	<span class="token comment">## 判断，新方向是否和初始方向相同，相同就返回false。这里可能会有疑惑：新方向不是在上面获取了初始方向的值嘛，肯定相同啊，我的思考结果是：新方向在代码58到62这里变化了</span>
+	<span class="token keyword">if</span> new_direction<span class="token operator">==</span>cardinal_direction<span class="token punctuation">:</span>
+		<span class="token keyword">return</span> false
+	<span class="token comment">## 将新方向赋予初始方向，初始方向发生变化</span>
+	cardinal_direction<span class="token operator">=</span>new_direction
+	direction_changed<span class="token punctuation">.</span>emit<span class="token punctuation">(</span>new_direction<span class="token punctuation">)</span>
+	<span class="token comment">## 左右翻转，因为左右只有side侧边动画一个，要实现左右动画可以把侧边动画沿y轴反转，利用精灵节点的scale属性</span>
+	sprite<span class="token punctuation">.</span>scale<span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">if</span> cardinal_direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>LEFT <span class="token keyword">else</span> <span class="token number">1</span>
+	<span class="token keyword">return</span> true
+<span class="token comment">## 更新动画方法</span>
+func update_animation<span class="token punctuation">(</span>state<span class="token punctuation">:</span>String<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token comment">#调用动画节点的播放方法，方法参数为你创建的动画名字：idle_up、walk_down等。</span>
+	<span class="token comment">#因为动画每次按键动画有方向和状态变化，所以需要这两个参数时时变化，state状态参数变化参考SetState()方法，方向参数变化参考SetDirection()方法和Aimdirection()方法</span>
+	animation_player<span class="token punctuation">.</span>play<span class="token punctuation">(</span>state <span class="token operator">+</span> <span class="token string">&quot;_&quot;</span><span class="token operator">+</span>aim_direction<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+<span class="token comment">## 动画方向获取方法，返回String</span>
+func aim_direction<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>String<span class="token punctuation">:</span>
+	<span class="token comment">#获取最新的初始方向，如果方向向下，返回“down”，如果方向向上，返回“up”，否则返回侧面“side”</span>
+	<span class="token keyword">if</span> cardinal_direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>DOWN<span class="token punctuation">:</span>
+		<span class="token keyword">return</span> <span class="token string">&quot;down&quot;</span>
+	<span class="token keyword">elif</span> cardinal_direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>UP<span class="token punctuation">:</span>
+		<span class="token keyword">return</span> <span class="token string">&quot;up&quot;</span>
+	<span class="token keyword">else</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> <span class="token string">&quot;side&quot;</span>
+<span class="token comment">#1. 先加载玩家脚本</span>
+<span class="token comment">#2. 状态管理器初始化，就是获取行走和空闲两个节点，第一次默认加载空闲状态</span>
+<span class="token comment">#3. 接着，调用改变状态方法，根据获取的节点是行走还是空闲进入各自的脚本</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br></div></div><ul><li>状态管理器脚本</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name EnemeyStateMachine extends Node
+
+<span class="token comment">## 状态集合变量</span>
+var states<span class="token punctuation">:</span>Array<span class="token punctuation">[</span>EnemyState<span class="token punctuation">]</span>
+<span class="token comment">## 临时状态缓存变量，记录上一个状态情况</span>
+var prev_state<span class="token punctuation">:</span>EnemyState
+<span class="token comment">## 当前状态变量</span>
+var current_state<span class="token punctuation">:</span>EnemyState
+<span class="token comment"># Called when the node enters the scene tree for the first time.</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token comment">## 防止第一次加载时触发代码</span>
+	process_mode<span class="token operator">=</span>Node<span class="token punctuation">.</span>PROCESS_MODE_DISABLED
+	<span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+
+<span class="token comment">## 过程内置函数</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token comment">## 改变状态，参数为当前状态变量</span>
+	change_state<span class="token punctuation">(</span>current_state<span class="token punctuation">.</span>process<span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+<span class="token comment">## 物理过程内置函数</span>
+func _physics_process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token comment">## 改变状态，参数为当前状态变量</span>
+	change_state<span class="token punctuation">(</span>current_state<span class="token punctuation">.</span>physics<span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+<span class="token comment">## 初始化方法</span>
+func initialize<span class="token punctuation">(</span>_enemy<span class="token punctuation">:</span>Enemy<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	states<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+	<span class="token comment">## 获取该节点下的子节点</span>
+	<span class="token keyword">for</span> c <span class="token keyword">in</span> get_children<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token comment">## 判断该节点是否是敌人状态节点类型，是就添加到状态集合变量中</span>
+		<span class="token keyword">if</span> c <span class="token keyword">is</span> EnemyState<span class="token punctuation">:</span>
+			states<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+	<span class="token comment">## 获取状态集合</span>
+	<span class="token keyword">for</span> s <span class="token keyword">in</span> states<span class="token punctuation">:</span>
+		<span class="token comment">## 将每个状态的敌人变量、状态管理器变量赋值，并调用它的初始化方法</span>
+		s<span class="token punctuation">.</span>enemy<span class="token operator">=</span>_enemy
+		s<span class="token punctuation">.</span>state_machine<span class="token operator">=</span>self
+		s<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">## 判断状态集合数量是否大于0，大于就调用改变状态方法，参数为状态集合的第一个数据，并将节点开启为可继承</span>
+	<span class="token keyword">if</span> states<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+		change_state<span class="token punctuation">(</span>states<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+		process_mode<span class="token operator">=</span>Node<span class="token punctuation">.</span>PROCESS_MODE_INHERIT
+		
+		
+	<span class="token keyword">pass</span>
+<span class="token comment">## 改变状态方法</span>
+func change_state<span class="token punctuation">(</span>new_state<span class="token punctuation">:</span>EnemyState<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token comment">## 判断是否新状态参数是否为空或等于当前状态，是就返回不执行如何操作</span>
+	<span class="token keyword">if</span> new_state<span class="token operator">==</span>null <span class="token operator">|</span><span class="token operator">|</span> new_state<span class="token operator">==</span>current_state<span class="token punctuation">:</span>
+		<span class="token keyword">return</span>
+	<span class="token comment">## 判断当前状态是否为空，不是就退出</span>
+	<span class="token keyword">if</span> current_state<span class="token punctuation">:</span>
+		current_state<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">## 之前的状态等于当前状态</span>
+	prev_state<span class="token operator">=</span>current_state
+	<span class="token comment">## 当前状态等于新状态</span>
+	current_state<span class="token operator">=</span>new_state
+	<span class="token comment">## 当前状态调用进入方法</span>
+	current_state<span class="token punctuation">.</span>enter<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br></div></div><ul><li>模板敌人状态脚本</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name EnemyState extends Node
+
+<span class="token comment">## 敌人变量</span>
+var enemy<span class="token punctuation">:</span>Enemy
+<span class="token comment">## 敌人状态管理器变量</span>
+var state_machine<span class="token punctuation">:</span>EnemeyStateMachine
+
+<span class="token comment"># Called when the node enters the scene tree for the first time.</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+
+<span class="token comment"># Called every frame. 'delta' is the elapsed time since the previous frame.</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+<span class="token comment">## 初始化</span>
+func init<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当玩家进入该状态时发生</span>
+func enter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+	
+<span class="token comment">## 该方法控制：当玩家退出该状态时发生</span>
+func exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当_process发生期间时状态进行的操作</span>
+func process<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>EnemyState<span class="token punctuation">:</span>
+	<span class="token keyword">return</span> null
+	
+<span class="token comment">## 该方法控制：当_physics_process发生期间执行的操作</span>
+func physics<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>EnemyState<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><ul><li>敌人空闲状态脚本</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name EnemyStateIdle extends EnemyState
+
+<span class="token comment">## 设置动画名称，可以自定义动画名称在属性里</span>
+<span class="token decorator annotation punctuation">@export</span> var anmi_name<span class="token punctuation">:</span>String<span class="token operator">=</span><span class="token string">&quot;idle&quot;</span>
+<span class="token comment">## 属性种类设置</span>
+<span class="token decorator annotation punctuation">@export_category</span><span class="token punctuation">(</span><span class="token string">&quot;AI&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">## 状态持续时间-最小</span>
+<span class="token decorator annotation punctuation">@export</span> var state_duration_min<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token operator">=</span><span class="token number">0.5</span>
+<span class="token comment">## 状态持续时间-最大</span>
+<span class="token decorator annotation punctuation">@export</span> var state_duration_max<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token operator">=</span><span class="token number">1.5</span>
+<span class="token comment">## 空闲后的状态</span>
+<span class="token decorator annotation punctuation">@export</span> var after_idle_state<span class="token punctuation">:</span>EnemyState
+
+<span class="token comment">## 计时器</span>
+var _timer<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token operator">=</span><span class="token number">0.0</span>
+
+
+<span class="token comment"># Called when the node enters the scene tree for the first time.</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+
+<span class="token comment"># Called every frame. 'delta' is the elapsed time since the previous frame.</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+<span class="token comment">## 初始化</span>
+func init<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当玩家进入该状态时发生</span>
+func enter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	enemy<span class="token punctuation">.</span>velocity<span class="token operator">=</span>Vector2<span class="token punctuation">.</span>ZERO
+	<span class="token comment">## 动画定时器间隔为最小和最大之间</span>
+	_timer<span class="token operator">=</span>randf_range<span class="token punctuation">(</span>state_duration_min<span class="token punctuation">,</span>state_duration_max<span class="token punctuation">)</span>
+	<span class="token comment">## 更新动画</span>
+	enemy<span class="token punctuation">.</span>update_animation<span class="token punctuation">(</span>anmi_name<span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+	
+<span class="token comment">## 该方法控制：当玩家退出该状态时发生</span>
+func exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当_process发生期间时状态进行的操作</span>
+func process<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>EnemyState<span class="token punctuation">:</span>
+	<span class="token comment">## 每次过程中，减动画每帧时间间隔_delta</span>
+	_timer<span class="token operator">-=</span>_delta
+	<span class="token comment">## 当定时器时间小于等于0时，返回空闲后状态(切换为：行走动画)</span>
+	<span class="token keyword">if</span> _timer<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> after_idle_state
+	<span class="token keyword">return</span> null
+	
+<span class="token comment">## 该方法控制：当_physics_process发生期间执行的操作</span>
+func physics<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>EnemyState<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><ul><li>玩家行走状态脚本</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name EnemeyStateWander extends EnemyState
+
+
+
+<span class="token comment">## 设置动画名称，可以自定义动画名称在属性里</span>
+<span class="token decorator annotation punctuation">@export</span> var anmi_name<span class="token punctuation">:</span>String<span class="token operator">=</span><span class="token string">&quot;walk&quot;</span>
+<span class="token comment">## 行走加速度变量</span>
+<span class="token decorator annotation punctuation">@export</span> var wander_speed<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token operator">=</span><span class="token number">20.0</span>
+<span class="token comment">## 属性种类设置</span>
+<span class="token decorator annotation punctuation">@export_category</span><span class="token punctuation">(</span><span class="token string">&quot;AI&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">## 状态持续动画时间</span>
+<span class="token decorator annotation punctuation">@export</span> var state_duration_animation<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token operator">=</span><span class="token number">0.5</span>
+<span class="token comment">## 状态动画循环次数变量-最小</span>
+<span class="token decorator annotation punctuation">@export</span> var state_cycles_min<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment">## 状态动画循环次数变量-最大</span>
+<span class="token decorator annotation punctuation">@export</span> var state_cycles_max<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">## 空闲后的状态</span>
+<span class="token decorator annotation punctuation">@export</span> var next_state<span class="token punctuation">:</span>EnemyState
+<span class="token comment">## 计时器</span>
+var _timer<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token operator">=</span><span class="token number">0.0</span>
+<span class="token comment">## 方向变量</span>
+var _direction<span class="token punctuation">:</span>Vector2
+
+
+<span class="token comment"># Called when the node enters the scene tree for the first time.</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+
+<span class="token comment"># Called every frame. 'delta' is the elapsed time since the previous frame.</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+<span class="token comment">## 初始化</span>
+func init<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当玩家进入该状态时发生</span>
+func enter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token comment">## 定时器时间赋值，最大最小之间</span>
+	_timer<span class="token operator">=</span>randi_range<span class="token punctuation">(</span>state_cycles_min<span class="token punctuation">,</span>state_cycles_max<span class="token punctuation">)</span><span class="token operator">*</span>state_duration_animation
+	var rand<span class="token operator">=</span>randi_range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+	_direction<span class="token operator">=</span>enemy<span class="token punctuation">.</span>DIR_4<span class="token punctuation">[</span>rand<span class="token punctuation">]</span>
+	enemy<span class="token punctuation">.</span>velocity<span class="token operator">=</span>_direction<span class="token operator">*</span>wander_speed
+	enemy<span class="token punctuation">.</span>set_direction<span class="token punctuation">(</span>_direction<span class="token punctuation">)</span>
+	enemy<span class="token punctuation">.</span>update_animation<span class="token punctuation">(</span>anmi_name<span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+	
+<span class="token comment">## 该方法控制：当玩家退出该状态时发生</span>
+func exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当_process发生期间时状态进行的操作</span>
+func process<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>EnemyState<span class="token punctuation">:</span>
+	_timer<span class="token operator">-=</span>_delta
+	<span class="token comment">## 当行走动画结束，切换下一个动画（等待动画）</span>
+	<span class="token keyword">if</span> _timer<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> next_state
+	<span class="token keyword">return</span> null
+	
+<span class="token comment">## 该方法控制：当_physics_process发生期间执行的操作</span>
+func physics<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>EnemyState<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><ol start="3"><li>其他</li></ol> <ul><li>这里教学者迈克另外创建了一个项目全局变量脚本global_player_manager，目前代码没用上，脚本如下：</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code>extends Node
+
+<span class="token comment"># 引用玩家</span>
+var player<span class="token punctuation">:</span>Player
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.507e6f2f.js" defer></script><script src="/assets/js/3.cb9785bd.js" defer></script><script src="/assets/js/1.1ebb03c9.js" defer></script><script src="/assets/js/80.cf281b83.js" defer></script>
+  </body>
+</html>
