@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>godot2D游戏开发流程 | 悯</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="光阴似箭">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.3d23d35a.css" as="style"><link rel="preload" href="/assets/js/app.afee8c3c.js" as="script"><link rel="preload" href="/assets/js/3.cb9785bd.js" as="script"><link rel="preload" href="/assets/js/1.1ebb03c9.js" as="script"><link rel="preload" href="/assets/js/86.f7744a2f.js" as="script"><link rel="prefetch" href="/assets/js/10.ad50a710.js"><link rel="prefetch" href="/assets/js/11.b4d1203b.js"><link rel="prefetch" href="/assets/js/12.f6eebe4e.js"><link rel="prefetch" href="/assets/js/13.94f3e276.js"><link rel="prefetch" href="/assets/js/14.d16b4003.js"><link rel="prefetch" href="/assets/js/15.4cb89caf.js"><link rel="prefetch" href="/assets/js/16.a4cec825.js"><link rel="prefetch" href="/assets/js/17.176574ba.js"><link rel="prefetch" href="/assets/js/18.8eb03297.js"><link rel="prefetch" href="/assets/js/19.ab07ce8a.js"><link rel="prefetch" href="/assets/js/20.ff676a44.js"><link rel="prefetch" href="/assets/js/21.4a50851b.js"><link rel="prefetch" href="/assets/js/22.d4a99c3d.js"><link rel="prefetch" href="/assets/js/23.e1de6484.js"><link rel="prefetch" href="/assets/js/24.5db816be.js"><link rel="prefetch" href="/assets/js/25.6e557d7f.js"><link rel="prefetch" href="/assets/js/26.c3a319a2.js"><link rel="prefetch" href="/assets/js/27.8ce14406.js"><link rel="prefetch" href="/assets/js/28.793816ca.js"><link rel="prefetch" href="/assets/js/29.357d7371.js"><link rel="prefetch" href="/assets/js/30.4ad1fc0d.js"><link rel="prefetch" href="/assets/js/31.6fb722ee.js"><link rel="prefetch" href="/assets/js/32.cf4e61b6.js"><link rel="prefetch" href="/assets/js/33.7b54988f.js"><link rel="prefetch" href="/assets/js/34.a95f515e.js"><link rel="prefetch" href="/assets/js/35.d3800f5e.js"><link rel="prefetch" href="/assets/js/36.d7cf0abe.js"><link rel="prefetch" href="/assets/js/37.fd920f5f.js"><link rel="prefetch" href="/assets/js/38.e4650a56.js"><link rel="prefetch" href="/assets/js/39.cccb031a.js"><link rel="prefetch" href="/assets/js/4.743e678e.js"><link rel="prefetch" href="/assets/js/40.dbf0c1b7.js"><link rel="prefetch" href="/assets/js/41.2200293f.js"><link rel="prefetch" href="/assets/js/42.630c5e47.js"><link rel="prefetch" href="/assets/js/43.df276849.js"><link rel="prefetch" href="/assets/js/44.0db309d3.js"><link rel="prefetch" href="/assets/js/45.4238cf9a.js"><link rel="prefetch" href="/assets/js/46.45577c74.js"><link rel="prefetch" href="/assets/js/47.13237eea.js"><link rel="prefetch" href="/assets/js/48.6c3fc4ea.js"><link rel="prefetch" href="/assets/js/49.c61017db.js"><link rel="prefetch" href="/assets/js/5.74e9d219.js"><link rel="prefetch" href="/assets/js/50.439c98a8.js"><link rel="prefetch" href="/assets/js/51.e6ca73f6.js"><link rel="prefetch" href="/assets/js/52.5b2fae34.js"><link rel="prefetch" href="/assets/js/53.95326ad9.js"><link rel="prefetch" href="/assets/js/54.2722642b.js"><link rel="prefetch" href="/assets/js/55.3869f4a8.js"><link rel="prefetch" href="/assets/js/56.84201296.js"><link rel="prefetch" href="/assets/js/57.d786fb5c.js"><link rel="prefetch" href="/assets/js/58.74dcdb45.js"><link rel="prefetch" href="/assets/js/59.b2b55c94.js"><link rel="prefetch" href="/assets/js/6.de42a852.js"><link rel="prefetch" href="/assets/js/60.ecb86781.js"><link rel="prefetch" href="/assets/js/61.b46ad231.js"><link rel="prefetch" href="/assets/js/62.de361ab2.js"><link rel="prefetch" href="/assets/js/63.56d95282.js"><link rel="prefetch" href="/assets/js/64.42633277.js"><link rel="prefetch" href="/assets/js/65.484398e3.js"><link rel="prefetch" href="/assets/js/66.b0516237.js"><link rel="prefetch" href="/assets/js/67.5cc73caa.js"><link rel="prefetch" href="/assets/js/68.4c2795ef.js"><link rel="prefetch" href="/assets/js/69.b4876e69.js"><link rel="prefetch" href="/assets/js/7.90911966.js"><link rel="prefetch" href="/assets/js/70.e743f206.js"><link rel="prefetch" href="/assets/js/71.c25b3592.js"><link rel="prefetch" href="/assets/js/72.628e07fa.js"><link rel="prefetch" href="/assets/js/73.20e9a3c6.js"><link rel="prefetch" href="/assets/js/74.b541220b.js"><link rel="prefetch" href="/assets/js/75.202f1e03.js"><link rel="prefetch" href="/assets/js/76.7368f4d2.js"><link rel="prefetch" href="/assets/js/77.c04c2f87.js"><link rel="prefetch" href="/assets/js/78.9659f776.js"><link rel="prefetch" href="/assets/js/79.9c9bdf3e.js"><link rel="prefetch" href="/assets/js/8.65e35dae.js"><link rel="prefetch" href="/assets/js/80.f48b4c2d.js"><link rel="prefetch" href="/assets/js/81.4a540686.js"><link rel="prefetch" href="/assets/js/82.6402a62f.js"><link rel="prefetch" href="/assets/js/83.ba5a8cce.js"><link rel="prefetch" href="/assets/js/84.2f3cd7ee.js"><link rel="prefetch" href="/assets/js/85.4aa36b46.js"><link rel="prefetch" href="/assets/js/87.3225fcaf.js"><link rel="prefetch" href="/assets/js/88.e2258d42.js"><link rel="prefetch" href="/assets/js/89.5a711641.js"><link rel="prefetch" href="/assets/js/9.8dfe89c8.js"><link rel="prefetch" href="/assets/js/90.42b5acc6.js"><link rel="prefetch" href="/assets/js/91.aac28982.js"><link rel="prefetch" href="/assets/js/92.d557ee1d.js"><link rel="prefetch" href="/assets/js/93.cb6a534e.js"><link rel="prefetch" href="/assets/js/94.b4471698.js"><link rel="prefetch" href="/assets/js/95.9115714e.js"><link rel="prefetch" href="/assets/js/96.0d23521e.js"><link rel="prefetch" href="/assets/js/97.3ae42aab.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3d23d35a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>悯</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>悯</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2026
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/school.jpg" alt="悯" class="logo"> <span class="site-name">悯</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习/" class="nav-link"><i class="iconfont undefined"></i>
+  学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网站/" class="nav-link"><i class="iconfont undefined"></i>
+  网站
+</a></li><li class="dropdown-item"><!----> <a href="/categories/游戏/" class="nav-link"><i class="iconfont undefined"></i>
+  游戏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/绘画/" class="nav-link"><i class="iconfont undefined"></i>
+  绘画
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/article/" class="nav-link"><i class="iconfont undefined"></i>
+  文档
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/school.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    悯
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>80</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>43</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/学习/" class="nav-link"><i class="iconfont undefined"></i>
+  学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网站/" class="nav-link"><i class="iconfont undefined"></i>
+  网站
+</a></li><li class="dropdown-item"><!----> <a href="/categories/游戏/" class="nav-link"><i class="iconfont undefined"></i>
+  游戏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/绘画/" class="nav-link"><i class="iconfont undefined"></i>
+  绘画
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/article/" class="nav-link"><i class="iconfont undefined"></i>
+  文档
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>godot2D游戏开发流程</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>悯</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2026
+        </a></span></div></div> <div data-v-dad8a512><main class="page"><div class="page-title" style="display:none;"><h1>godot2D游戏开发流程</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>悯</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2026-04-25 17:30:00</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>godot</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="让人物动起来：2d坐标向量-vector2d"><a href="#让人物动起来：2d坐标向量-vector2d" class="header-anchor">#</a> 让人物动起来：2D坐标向量-Vector2D</h2> <ol><li>创建主场景，节点类型：Node2D</li> <li>创建移动物体-玩家场景，节点类型：CharacterBody2D</li> <li>给玩家下创建子节点，节点类型：CollisionShape2D-碰撞节点，让玩家可以和其他物体发生碰撞。和移动没关系</li> <li>玩家下创建精灵节点-Sprite2D，并将多帧的图片拖到Texture属性上</li> <li>在精灵节点上修改Hframes-动画列数和Vframes-动画行数</li> <li>创建玩家节点脚本</li> <li>项目创建输入映射：项目-项目设置-输入映射-添加新动作，编辑新动作输入动作映射的按键等</li> <li>在_process函数内获取映射的动作输入变化，方法有多种，例如：</li></ol> <div class="language-python line-numbers-mode"><pre class="language-python"><code>velocity<span class="token operator">=</span>Vector2<span class="token punctuation">(</span>
+		Input<span class="token punctuation">.</span>get_axis<span class="token punctuation">(</span><span class="token string">&quot;left&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;right&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		Input<span class="token punctuation">.</span>get_axis<span class="token punctuation">(</span><span class="token string">&quot;up&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;down&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">)</span>
+<span class="token comment">##velocity是CharacterBody2D的速度矢量属性，一般表现为二维坐标即属性类型为Vector2D</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="9"><li>在物理过程函数_physics_process中添加代码：move_and_slide。会根据速度矢量变化移动精灵图片</li></ol> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <p>速度矢量是重点，godot实现移动需要CharaterBody2D的velocity属性和move_and_slide()方法</p> <h2 id="让世界多彩：tilemaplayer"><a href="#让世界多彩：tilemaplayer" class="header-anchor">#</a> 让世界多彩：TileMapLayer</h2> <ol><li>创建TileMapLayer节点</li> <li>将地图瓦片集图片拖到图块里</li> <li>在Ordering里设置Z Index，不要和玩家处于同一层</li> <li>设置Tile Set的Tile Size，为你的地图图片的最小单位像素大小</li> <li>点击Tile Set 属性，设置Physics Layers的Collision Layer 为对应为主。Terrain Sets 属性的Mode属性下拉框选择Match Corners And Sides，创建一个Terrains，Name任意，Color默认</li> <li>找到TileSet栏，绘制&gt;下拉框选择-地形
+绘制Terrain Set 下拉框选择Terain Set0，Terrain属性下拉框选择Path0（5步骤创建的Name），然后在右边的地图里点出瓦片集</li> <li>找到TileSet栏，绘制&gt;下拉框选择-物理层
+在右边的图片里选择碰撞区域</li> <li>最后将创建的TileMapLayer节点设置为场景，然后在需要的地方Node2D节点下放置就可以使用该场景的瓦片集和图片了</li></ol> <h2 id="让人物灵动起来：动画节点-animactionplayer和状态机node"><a href="#让人物灵动起来：动画节点-animactionplayer和状态机node" class="header-anchor">#</a> 让人物灵动起来：动画节点-AnimactionPlayer和状态机Node</h2> <h3 id="动画节点动起来"><a href="#动画节点动起来" class="header-anchor">#</a> 动画节点动起来</h3> <ol><li>在玩家场景下场景AnimactionPlayer节点</li> <li>点击动画栏-动画创建动画</li> <li>点击动画栏-+创建轨道-&gt;选择属性轨道-&gt;选择你要创建动画的精灵节点（sprite节点）-&gt;选择该节点下的frame属性（帧属性）</li> <li>根据需求创建多个帧属性轨道，例如：上下左右的待机帧轨道和上下左右的行走帧轨道</li> <li>在多个帧轨道里选择一个作为游戏加载后的自动加载动画</li> <li>帧轨道有在动画栏右边有个循环类型：不循环、循环、来回循环</li> <li>修改玩家脚本。
+<ol><li>先根据在_process里获取的移动坐标向量判断它当前是上下左右那个方向，</li> <li>再根据移动坐标向量判断是否移动判断是行走还是空闲那个状态，</li> <li>最后更新动画（调用动画节点的play方法更新动画）</li></ol></li></ol> <h4 id="总结-2"><a href="#总结-2" class="header-anchor">#</a> 总结</h4> <p>动画帧创建没什么说的，说一下脚本逻辑，主要靠获取的移动的坐标向量判断方向和状态，最后更新动画</p> <h3 id="状态机动起来"><a href="#状态机动起来" class="header-anchor">#</a> 状态机动起来</h3> <ol><li>创建state.gd基类脚本，一切动作继承这个脚本</li></ol> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name  State extends Node
+
+static var player<span class="token punctuation">:</span>Player
+
+<span class="token comment">## Called when the node enters the scene tree for the first time.</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+<span class="token comment">## 该方法控制：当玩家进入该状态时发生</span>
+func Enter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+	
+<span class="token comment">## 该方法控制：当玩家退出该状态时发生</span>
+func Exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当_process发生期间时状态进行的操作</span>
+func Process<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	<span class="token keyword">return</span> null
+	
+<span class="token comment">## 该方法控制：当_physics_process发生期间执行的操作</span>
+func Physics<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+<span class="token comment">## 该方法控制：当_input_event(内置的输入事件函数)发生时执行的操作</span>
+func HandleInput<span class="token punctuation">(</span>_event<span class="token punctuation">:</span>InputEvent<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><ol start="2"><li>创建行走脚本，继承状态基类</li></ol> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name  State_Idle extends State
+<span class="token comment">## 行走节点只读变量，快捷创建方法：左边节点菜单栏，按ctrl+鼠标左键拖过来</span>
+<span class="token decorator annotation punctuation">@onready</span> var walk<span class="token punctuation">:</span> State_Walk <span class="token operator">=</span> $<span class="token string">&quot;../Walk&quot;</span>
+<span class="token comment">## 攻击节点变量-只读</span>
+<span class="token decorator annotation punctuation">@onready</span> var attack<span class="token punctuation">:</span> State_Attack <span class="token operator">=</span> $<span class="token string">&quot;../Attack&quot;</span>
+
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span> 
+
+<span class="token comment">## 该方法控制：当玩家进入该状态时发生</span>
+func Enter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	player<span class="token punctuation">.</span>UpdateAnimation<span class="token punctuation">(</span><span class="token string">&quot;idle&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+	
+<span class="token comment">## 该方法控制：当玩家退出该状态时发生</span>
+func Exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当_process发生期间时状态进行的操作</span>
+func Process<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	<span class="token comment"># 判断玩家坐标是否为移动，有移动就返回行走节点变量，否则就将玩家变量的位置（系统变量位置velocity）赋值为Vector2.ZERO（0，0）</span>
+	<span class="token keyword">if</span> player<span class="token punctuation">.</span>direction<span class="token operator">!=</span>Vector2<span class="token punctuation">.</span>ZERO<span class="token punctuation">:</span>
+		<span class="token keyword">return</span> walk
+	player<span class="token punctuation">.</span>velocity<span class="token operator">=</span>Vector2<span class="token punctuation">.</span>ZERO
+	<span class="token keyword">return</span> null
+	
+<span class="token comment">## 该方法控制：当_physics_process发生期间执行的操作</span>
+func Physics<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+<span class="token comment">## 该方法控制：当_input_event(内置的输入事件函数)发生时执行的操作</span>
+func HandleInput<span class="token punctuation">(</span>_event<span class="token punctuation">:</span>InputEvent<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	<span class="token keyword">if</span> _event<span class="token punctuation">.</span>is_action<span class="token punctuation">(</span><span class="token string">&quot;attack&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> attack
+	<span class="token keyword">return</span> null
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><ol start="3"><li>创建空闲脚本，继承状态基类</li></ol> <div class="language-python line-numbers-mode"><pre class="language-python"><code>class_name  State_Walk extends State
+
+<span class="token comment">## 加速度变量</span>
+<span class="token decorator annotation punctuation">@export</span> var move_seep <span class="token punctuation">:</span> <span class="token builtin">float</span> <span class="token operator">=</span><span class="token number">100.0</span>
+<span class="token comment">## 闲置节点只读变量，快捷创建方法：左边节点菜单栏，按ctrl+鼠标左键拖过来</span>
+<span class="token decorator annotation punctuation">@onready</span> var idle<span class="token punctuation">:</span> State_Idle <span class="token operator">=</span> $<span class="token string">&quot;../Idle&quot;</span>
+<span class="token comment">## 攻击节点变量-只读</span>
+<span class="token decorator annotation punctuation">@onready</span> var attack<span class="token punctuation">:</span> State_Attack <span class="token operator">=</span> $<span class="token string">&quot;../Attack&quot;</span>
+
+
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span> 
+
+<span class="token comment">## 方法控制：当玩家进入该状态时发生</span>
+func Enter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token comment"># 进入就调用静态的玩家变量的更新动画方法，并传行走值：walk</span>
+	player<span class="token punctuation">.</span>UpdateAnimation<span class="token punctuation">(</span><span class="token string">&quot;walk&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">pass</span>
+	
+<span class="token comment">## 该方法控制：当玩家退出该状态时发生</span>
+func Exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+	<span class="token keyword">pass</span>
+
+<span class="token comment">## 该方法控制：当_process发生期间时状态进行的操作</span>
+func Process<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	<span class="token comment"># 当玩家位置没有移动即（0，0），就返回空置变量，</span>
+	<span class="token comment"># 否则，静态玩家变量位置设置（系统的位置变量：velocity）为玩家位置（我们的设置的位置变量：direction）乘于加速度变量move_speed</span>
+	<span class="token comment"># 判断玩家是否位置变化了，有就调用玩家更新动画方法，传行走：walk，并返回null</span>
+	<span class="token keyword">if</span> player<span class="token punctuation">.</span>direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>ZERO<span class="token punctuation">:</span>
+		<span class="token keyword">return</span> idle
+	player<span class="token punctuation">.</span>velocity<span class="token operator">=</span>player<span class="token punctuation">.</span>direction<span class="token operator">*</span>move_seep
+	
+	<span class="token keyword">if</span> player<span class="token punctuation">.</span>SetDirection<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		player<span class="token punctuation">.</span>UpdateAnimation<span class="token punctuation">(</span><span class="token string">&quot;walk&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> null
+	
+<span class="token comment">#该方法控制：当_physics_process发生期间执行的操作</span>
+func Physics<span class="token punctuation">(</span>_delta<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	
+	<span class="token keyword">return</span> null
+<span class="token comment">#该方法控制：当_input_event(内置的输入事件函数)发生时执行的操作</span>
+func HandleInput<span class="token punctuation">(</span>_event<span class="token punctuation">:</span>InputEvent<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>State<span class="token punctuation">:</span>
+	<span class="token keyword">if</span> _event<span class="token punctuation">.</span>is_action<span class="token punctuation">(</span><span class="token string">&quot;attack&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> attack
+	<span class="token keyword">return</span> null
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><ol start="4"><li>创建状态管理器脚本，继承状态基类</li></ol> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment">#玩家状态管理类</span>
+class_name PlayerStateMachine extends State
+<span class="token comment">#状态集合变量</span>
+var states<span class="token punctuation">:</span>Array<span class="token punctuation">[</span>State<span class="token punctuation">]</span>
+<span class="token comment">#临时状态缓存变量，记录上一个状态情况</span>
+var prev_state<span class="token punctuation">:</span>State
+<span class="token comment">#当前状态变量</span>
+var current_state<span class="token punctuation">:</span>State
+
+<span class="token comment"># 内置函数，只执行一次，优先级弱于_process()和_physical_process()</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">##当进入该节点时，该节点所有子节点设置无效</span>
+    process_mode<span class="token operator">=</span>Node<span class="token punctuation">.</span>PROCESS_MODE_DISABLED
+    <span class="token keyword">pass</span> <span class="token comment"># Replace with function body.</span>
+
+
+<span class="token comment"># 内置程序周期函数，1/60秒执行，优先级弱于_physical_process()内置函数</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ChangeState<span class="token punctuation">(</span>current_state<span class="token punctuation">.</span>Process<span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+    
+<span class="token comment"># 内置程序周期函数，1/60秒执行</span>
+func _physics_process<span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+    ChangeState<span class="token punctuation">(</span>current_state<span class="token punctuation">.</span>Physics<span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+<span class="token comment">#内置函数，控制输入时调用</span>
+func _unhandled_input<span class="token punctuation">(</span>event<span class="token punctuation">:</span> InputEvent<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+    ChangeState<span class="token punctuation">(</span>current_state<span class="token punctuation">.</span>HandleInput<span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+<span class="token comment"># 初始化方法，逻辑：</span>
+<span class="token comment"># 状态集合变量设置为空</span>
+<span class="token comment"># 循环获取该节点下的所有节点，并添加到状态节点变量里</span>
+<span class="token comment"># 判断状态集合变量是否为空，不为空就将参数玩家_player赋值给状态集合变量为索引0的玩家</span>
+<span class="token comment"># 启动节点，执行：process_mode=Node.PROCESS_MODE_INHERIT</span>
+func Intialize<span class="token punctuation">(</span>_player<span class="token punctuation">:</span>Player<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+    states<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> c <span class="token keyword">in</span> get_children<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> c <span class="token keyword">is</span> State<span class="token punctuation">:</span>
+            states<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> states<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+        states<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>player<span class="token operator">=</span>_player
+        ChangeState<span class="token punctuation">(</span>states<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token comment">##将该节点下的子节点启动，设置为可继承，即默认设置</span>
+        process_mode<span class="token operator">=</span>Node<span class="token punctuation">.</span>PROCESS_MODE_INHERIT
+        
+
+<span class="token comment"># 改变状态方法</span>
+<span class="token comment">#逻辑：当参数为null或和当前状态相同，不操作，</span>
+<span class="token comment">#不同时，先退出之前的状态即当前状态变量current_state调用Exit()方法，然后将当前状态current_state存放在缓存变量pre_state里</span>
+<span class="token comment">#接着，将参数新变量new_state赋予当前状态变量current_state</span>
+<span class="token comment">#最后当前状态current_state调用进入状态方法Enter()</span>
+func ChangeState<span class="token punctuation">(</span>new_state<span class="token punctuation">:</span>State<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>void<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> new_state<span class="token operator">==</span>null <span class="token operator">|</span><span class="token operator">|</span> new_state<span class="token operator">==</span>current_state<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    <span class="token keyword">if</span> current_state<span class="token punctuation">:</span>
+        current_state<span class="token punctuation">.</span>Exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    prev_state<span class="token operator">=</span>current_state
+    current_state<span class="token operator">=</span>new_state
+    current_state<span class="token punctuation">.</span>Enter<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><ol start="5"><li>修改玩家脚本，去除获取状态名称代码这部分，通过状态机获取</li></ol> <div class="language-python line-numbers-mode"><pre class="language-python"><code>
+class_name Player extends CharacterBody2D
+
+<span class="token comment"># 动画类变量，快捷方法：可以按Ctrl+鼠标左键选中的节点托至代码里</span>
+<span class="token decorator annotation punctuation">@onready</span> var animation_player <span class="token punctuation">:</span> AnimationPlayer <span class="token operator">=</span> $AnimationPlayer
+<span class="token comment"># 精灵类变量，快捷方法如上</span>
+<span class="token decorator annotation punctuation">@onready</span> var sprite_2d <span class="token punctuation">:</span> Sprite2D <span class="token operator">=</span> $Sprite2D
+<span class="token decorator annotation punctuation">@onready</span> var state_machine<span class="token punctuation">:</span> PlayerStateMachine <span class="token operator">=</span> $StateMachine
+
+<span class="token comment">#初始方向变量，默认向下</span>
+var cardinal_direction <span class="token punctuation">:</span> Vector2 <span class="token operator">=</span> Vector2<span class="token punctuation">.</span>DOWN
+<span class="token comment">#初始位置变量，默认（0，0）</span>
+var direction <span class="token punctuation">:</span> Vector2 <span class="token operator">=</span> Vector2<span class="token punctuation">.</span>ZERO
+
+<span class="token comment"># 内置函数，只执行一次，优先级弱于_process()和_physical_process()</span>
+func _ready<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    state_machine<span class="token punctuation">.</span>Intialize<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    <span class="token keyword">pass</span> 
+
+<span class="token comment"># 内置程序周期函数，1/60秒执行，优先级弱于_physical_process()内置函数</span>
+func _process<span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#print(&quot;velocity:&quot;,velocity)</span>
+    <span class="token comment">#获取xy轴坐标，获取方法是：正参数减负参数。在godot里，xy坐标轴中，x轴正坐标在右边的坐标轴上，y轴的正坐标在下面的坐标轴上</span>
+    direction<span class="token punctuation">.</span>x<span class="token operator">=</span>Input<span class="token punctuation">.</span>get_action_strength<span class="token punctuation">(</span><span class="token string">&quot;right&quot;</span><span class="token punctuation">)</span><span class="token operator">-</span>Input<span class="token punctuation">.</span>get_action_strength<span class="token punctuation">(</span><span class="token string">&quot;left&quot;</span><span class="token punctuation">)</span>
+    direction<span class="token punctuation">.</span>y<span class="token operator">=</span>Input<span class="token punctuation">.</span>get_action_strength<span class="token punctuation">(</span><span class="token string">&quot;down&quot;</span><span class="token punctuation">)</span><span class="token operator">-</span>Input<span class="token punctuation">.</span>get_action_strength<span class="token punctuation">(</span><span class="token string">&quot;up&quot;</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">pass</span>
+<span class="token comment"># 内置物理程序周期函数，1/60秒执行</span>
+func _physics_process<span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#内置函数，更新移动坐标</span>
+    move_and_slide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+<span class="token comment">#设置方向方法，返回bool类型</span>
+func SetDirection<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token comment">#创建局部变量new_direction获取初始方向</span>
+    var new_direction<span class="token punctuation">:</span>Vector2<span class="token operator">=</span>cardinal_direction
+    <span class="token comment">#判断获取了最新初始方向的局部变量是否有变化，没有返回false</span>
+    <span class="token keyword">if</span> direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>ZERO<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> false
+    <span class="token comment">#判断，在y轴没有变化时，新的方向是否往左变化（即全局变量direction的x属性是否小于0），变化了方向为-1（也可以写成Vector2.LEFT），否则相反</span>
+    <span class="token keyword">if</span> direction<span class="token punctuation">.</span>y<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+        new_direction<span class="token operator">=</span>Vector2<span class="token punctuation">.</span>LEFT <span class="token keyword">if</span> direction<span class="token punctuation">.</span>x<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token keyword">else</span> Vector2<span class="token punctuation">.</span>RIGHT
+    <span class="token comment">#判断参考上</span>
+    <span class="token keyword">if</span> direction<span class="token punctuation">.</span>x<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+        new_direction<span class="token operator">=</span>Vector2<span class="token punctuation">.</span>UP <span class="token keyword">if</span> direction<span class="token punctuation">.</span>y<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token keyword">else</span> Vector2<span class="token punctuation">.</span>DOWN
+    <span class="token comment">#判断，新方向是否和初始方向相同，相同就返回false。这里可能会有疑惑：新方向不是在上面获取了初始方向的值嘛，肯定相同啊，我的思考结果是：新方向在代码58到62这里变化了</span>
+    <span class="token keyword">if</span> new_direction<span class="token operator">==</span>cardinal_direction<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> false
+    <span class="token comment">#将新方向赋予初始方向，初始方向发生变化</span>
+    cardinal_direction<span class="token operator">=</span>new_direction
+    <span class="token comment">#左右翻转，因为左右只有side侧边动画一个，要实现左右动画可以把侧边动画沿y轴反转，利用精灵节点的scale属性</span>
+    sprite_2d<span class="token punctuation">.</span>scale<span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">if</span> cardinal_direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>LEFT <span class="token keyword">else</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> true
+
+<span class="token comment">#更新动画方法</span>
+func UpdateAnimation<span class="token punctuation">(</span>state<span class="token punctuation">:</span>String<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> void<span class="token punctuation">:</span>
+    <span class="token comment">#调用动画节点的播放方法，方法参数为你创建的动画名字：idle_up、walk_down等。</span>
+    <span class="token comment">#因为动画每次按键动画有方向和状态变化，所以需要这两个参数时时变化，state状态参数变化参考SetState()方法，方向参数变化参考SetDirection()方法和Aimdirection()方法</span>
+    animation_player<span class="token punctuation">.</span>play<span class="token punctuation">(</span>state <span class="token operator">+</span> <span class="token string">&quot;_&quot;</span><span class="token operator">+</span>AimDirection<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">pass</span>
+<span class="token comment">#动画方向获取方法，返回String</span>
+func AimDirection<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>String<span class="token punctuation">:</span>
+    <span class="token comment">#获取最新的初始方向，如果方向向下，返回“down”，如果方向向上，返回“up”，否则返回侧面“side”</span>
+    <span class="token keyword">if</span> cardinal_direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>DOWN<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;down&quot;</span>
+    <span class="token keyword">elif</span> cardinal_direction<span class="token operator">==</span>Vector2<span class="token punctuation">.</span>UP<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;up&quot;</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;side&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div><ol start="6"><li>在玩家下创建一个状态管理器节点，节点类型为Node2D，下面创建空闲和行走两个子节点，也是Node2D类型，并连接脚本</li></ol> <h3 id="总结-3"><a href="#总结-3" class="header-anchor">#</a> 总结</h3> <ol><li><p>玩家脚本ready里调用状态管理器的初始化，将玩家self传过去</p></li> <li><p>而初始化中是获取状态管理器的子节点（行走、空闲子节点）
+3.再将第一个状态节点传给状态管理器里的改变状态方法，参数是我们创建的状态基类（所以一般空闲状态放在状态管理器下第一个位置），</p></li> <li><p>然后调用空闲节点的进入状态方法，方法里再调用玩家的更新动画方法，将动状态名称传过去。在空闲节点里判断玩家是否移动，是就返回行走类型，</p></li> <li><p>等状态管理器的_process调用当前状态的Process方法，</p></li> <li><p>如果是空闲状态节点的脚本里的Process方法，会判断玩家里的位置向量是否变化，变化就返回行走状态类型，反之什么也不返回</p></li> <li><p>如果返回行走状态类型，在状态管理器代码的_process方法里进行下一步会调用状态管理器下脚本下的改变状态方法。如果状态和之前的状态一样，什么也不干，反之就是行走状态就等于这个状态的进入方法，进入方法会调用玩家的动画更新方法，参数就是行走名称</p></li></ol> <h2 id="互动的世界：area2d和collisionobject2d"><a href="#互动的世界：area2d和collisionobject2d" class="header-anchor">#</a> 互动的世界：Area2D和CollisionObject2D</h2> <ol><li>互动的本质是，比如，两个精灵节点（A和B）下分别各自创建一个CollisionShpae2D节点和Area2D节点，当A精灵的CollisionSpape2D进入另一个B精灵的Area2D范围，触发B精灵的Area2D的信号，然后B精灵做出反应，A同理。</li> <li>打怪的世界：Area2D、CollisionObject2D和AnimactionPlayer
+<ol><li>在互动的基础上，添加动画的变化，即在B精灵检查到A精灵进入自己的区域，触发动画节点AnimationPlayer</li> <li>战斗交互：Area2D
+<ol><li>在玩家场景里添加攻击的动画轨道</li> <li>状态管理器节点下添加攻击节点和脚本</li> <li>添加通用场景-盒子场景，用于绑定在被攻击的物体上，比如敌人场景下，节点类型：Area2D，开启monitorable属性（开启了该属性，可以被其他Area2D节点检测到）</li> <li>添加通用场景-攻击场景，用于绑定在攻击的节点，比如玩家场景下，节点类型：Area2D，开启monitoring属性（开启了该属性会检测经过Area2D下的区域）</li> <li>创建被攻击创建，比如植物，先创建一个Node2D节点，节点下创建基类节点，并绑定盒子场景为子节点，另外还需要创建一个StaticBody2D节点在植物场景下，起到固定不可移动作用</li> <li>玩家场景下玩家精灵节点下绑定攻击盒子场景为子节点</li></ol></li></ol> <ul><li><p>总结</p> <ol start="0"><li>状态机-攻击：开启攻击区域节点是否可以检测进入攻击区域的属性-&gt;攻击盒子：连接Area2D的检测区域信号，如果检测到被攻击的盒子，就告诉盒子你被攻击了-&gt;被攻击的盒子：得知被攻击了，就发出我被攻击了的信号告知植物（即它的捆绑的植物精灵节点）-&gt;植物得知后，掉血死亡消失</li> <li>当玩家的攻击植物时，在state_attack里将伤害盒子的monitoring开启，告诉他可以检测到其他盒子了，</li> <li>伤害盒子脚本的_ready里连接area_entered.connect伤害盒子进入其他区域信号，调用本地方法（AreaEntered()）方法检测</li> <li>AreaEntered判断进入的区域Area2D是否是HitBox类型节点，是就调用盒子节点受到伤害方法TakeDamage()并将self传过去（伤害盒子传过去，也可以传伤害值过去），</li> <li>在盒子脚本里，TakeDamage里接受到伤害类参数，调用盒子的伤害信号Damage，并将伤害类参数传过去</li> <li>最后，在植物节点脚本里，获取盒子节点的Damage信号并连接调用本地方法，告知植物被伤害到了，需要消失或掉血</li></ol></li></ul></li></ol> <h2 id="让世界有声音：audiostreamplayer2d节点"><a href="#让世界有声音：audiostreamplayer2d节点" class="header-anchor">#</a> 让世界有声音：AudioStreamPlayer2D节点</h2></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.afee8c3c.js" defer></script><script src="/assets/js/3.cb9785bd.js" defer></script><script src="/assets/js/1.1ebb03c9.js" defer></script><script src="/assets/js/86.f7744a2f.js" defer></script>
+  </body>
+</html>
